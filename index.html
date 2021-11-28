@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+<!-- HEADER -->
+    <header>
+    </header>
+<!-- MAIN -->
+    <main>
+        <input type="text" name="" id="inp">
+        <button onclick="morse()">Encrypt</button>
+        <p id="res"></p>
+    </main>
+<!-- FOOTER -->
+    <footer>
+    </footer>
+<!-- SCRIPT -->
+    <script>
+        let morseAlphabet = [
+  { letter: "1", morseCode: ".----" },
+  { letter: "2", morseCode: "..---" },
+  { letter: "3", morseCode: "...--" },
+  { letter: "4", morseCode: "....-" },
+  { letter: "5", morseCode: "....." },
+  { letter: "6", morseCode: "-...." },
+  { letter: "7", morseCode: "--..." },
+  { letter: "8", morseCode: "---.." },
+  { letter: "9", morseCode: "----." },
+  { letter: "0", morseCode: "-----" },
+  { letter: " ", morseCode: "    " },
+  { letter: "A", morseCode: ".-" },
+  { letter: "B", morseCode: "-..." },
+  { letter: "C", morseCode: "-.-." },
+  { letter: "D", morseCode: "-.." },
+  { letter: "E", morseCode: "." },
+  { letter: "F", morseCode: "..-." },
+  { letter: "G", morseCode: "--." },
+  { letter: "H", morseCode: "...." },
+  { letter: "I", morseCode: ".." },
+  { letter: "J", morseCode: ".---" },
+  { letter: "K", morseCode: "-.-" },
+  { letter: "L", morseCode: ".-.." },
+  { letter: "M", morseCode: "--" },
+  { letter: "N", morseCode: "-." },
+  { letter: "O", morseCode: "---" },
+  { letter: "P", morseCode: ".--." },
+  { letter: "Q", morseCode: "--.-" },
+  { letter: "R", morseCode: ".-." },
+  { letter: "S", morseCode: "..." },
+  { letter: "T", morseCode: "-" },
+  { letter: "U", morseCode: "..-" },
+  { letter: "V", morseCode: "...-" },
+  { letter: "W", morseCode: ".--" },
+  { letter: "X", morseCode: "-..-" },
+  { letter: "Y", morseCode: "-.--" },
+  { letter: "Z", morseCode: "--.." }
+];
+// console.log(morseAlphabet[0]['letter'])
+function morse() {
+    let inp = (document.getElementById('inp').value).toUpperCase()
+    let res = document.getElementById('res')
+    res.innerHTML = ''
+    for (i of inp) {
+        for (let x=0; x < morseAlphabet.length; x++) {
+            if (i == morseAlphabet[x]['letter']) {
+                res.innerHTML += `${i} = ${morseAlphabet[x]['morseCode']}  ` + '</br>'
+            }
+            // console.log(i)
+        }
+    }
+}
+
+    </script>
+</body>
+</html>
